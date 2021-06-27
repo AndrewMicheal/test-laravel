@@ -46,7 +46,7 @@ class ApiCatController extends Controller
         $cat = Cat::create([
            'name' => $request->name ,
            'desc' => $request->desc ,
-           'img' => $imagePath
+           'img' => asset("uploads") . "/" . $this->img 
        ]);
 
        return response()->json([
