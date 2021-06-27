@@ -51,7 +51,7 @@ class ApiCatController extends Controller
 
        return response()->json([
            'msg' => 'create successfully' ,
-           'cat' => new CatResource($cat) 
+        //    'cat' => new CatResource($cat) 
        ] , 201);
     }
 }
