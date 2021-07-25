@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Models\Cat;
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -42,7 +41,6 @@ class ApiCatController extends Controller
             ]);
         }
 
-        $imagePath = Storage::putfile('cats',$request->img);
 
         $file_extenetison = $request->img->getClientOriginalExtension();
         $fileName = time().'.'.$file_extenetison;
