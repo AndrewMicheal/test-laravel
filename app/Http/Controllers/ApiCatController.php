@@ -43,10 +43,16 @@ class ApiCatController extends Controller
         }
 
         $imagePath = Storage::putfile('cats',$request->img);
+
+        $file_extenetison = $request->img->getClientOriginalExtension();
+        $fileName = time().'.'.$file_extenetison;
+        $path = 'uploads/cats';
+        $request->img->move($path,$fileName);
+
         $cat = Cat::create([
            'name' => $request->name ,
            'desc' => $request->desc ,
-           'img' =>  $imagePath 
+           'img' =>  $fileName 
        ]);
 
        return response()->json([
