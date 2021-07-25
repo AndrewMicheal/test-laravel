@@ -44,7 +44,7 @@ return [
 
         'cats' => [
             'driver' => 'local',
-            'root' => base_path() . 'public/uploads/cats',
+            'root' => public_bath('uploadss/cats'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
