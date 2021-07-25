@@ -45,7 +45,7 @@ class ApiCatController extends Controller
         $file_extenetison = $request->img->getClientOriginalExtension();
         $fileName = time().'.'.$file_extenetison;
         $path = 'uploads/cats';
-        $request->img->move(public_path('uploads/cats'),$request->img->getClientOriginalName());
+        $request->img->store('public/uploads/cats');
 
         $cat = Cat::create([
            'name' => $request->name ,
